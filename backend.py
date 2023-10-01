@@ -137,11 +137,37 @@ def push_to_db():
     return 'data push done'
 
 ''' ******** end *********'''    
+
+
+
 @app.route('/')
 def home():
+    genre = basic_info.query.with_entities(basic_info.title).all()
+    data_list = [row[0] for row in genre]
+    set_data = set()
+    for i in data_list:
+        set_data.add(i)
+        
+    # by post_name
+    details = basic_info.query.all()
+    
+    return render_template('index.html',job_name = set_data, details=details,)
 
-    data = admit_info.query.all()
-    print(data)
-    return str(data[0])
+@app.route('/all_jobs', methods=['GET','POST'])
+def all_jobs():
+    data = basic_info.query.all()
+    if request.method =='POST':
+        job_name = request.form.get('job_name')
+        print(job_name)
+        data = basic_info.query.filter(basic_info.title.contains(job_name) | basic_info.genre.contains(job_name) | basic_info.post_name.contains(job_name)).all()
+        return render_template('commonpage.html',data = data)
+    return render_template('commonpage.html',data = data)
+
+
+
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
 if __name__ == '__main__':
     app.run(debug = True)

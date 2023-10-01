@@ -1,0 +1,652 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <!-- NO TOUCH!!!! -->
+    <!-- <base href="https://allgovernmentjobs.in/" id="base_path"> -->
+    <!-- <link rel="manifest" href="manifest.webmanifest.json"> -->
+
+
+    <meta name="theme-color" content="#195182">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="">
+    <meta name="msapplication-TileImage" content="">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <link rel="canonical" href="">
+    <title>EveryJob - Every job notification you can think of available</title>
+    <meta name="Description"
+        content="Find you Latest Notifications for All Government jobs across India and First Govt jobs forum for all Examination Discussion. Get Free SMS Alert subscription to the New updates of Sarkari naukri, Results, Mock Test and all.">
+    <meta name="keywords"
+        content="All Government jobs, Free SMS Alert, Sarkari naukri, Latest govt Jobs, Sarkari results, Free job alert, Govt jobs Alert, Latest Notifications, Recruitment">
+    <link rel="icon" href="" type="image/png" sizes="20x20">
+    
+    <!-- CAN'T REMOVE GOOGLE ANALYTICS & GOOGLE TAGE MANAGER RIGHT NOW..WE HAVE TO MAKE A NEW PROJECT THERE TO GET A ID AND THEN PUT HERE  -->
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script type="text/javascript" async=""
+        src="https://www.googletagmanager.com/gtag/js?id=G-Q420M2GQ9D&amp;l=dataLayer&amp;cx=c"></script>
+    <script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-TMHX5CP"></script>
+    <script
+        type="application/ld+json">{ "@context": "https://schema.org", "@type": "WebSite", "url": "//site url", "potentialAction": { "@type": "SearchAction", "target": "https://site url/search?q={search_term_string}", "query-input": "required name=search_term_string" } } 
+    </script>
+    <script type="text/javascript" defer="" src="{{ url_for('static',filename = 'assets/js/main.js')}}"></script>
+    <link async="" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="{{ url_for('static',filename = 'assets/css/main.css')}}" type="text/css" rel="stylesheet">
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TMHX5CP');</script>
+    <style type="text/css">
+        .banner-container .jobsinfo,
+        .banner-container .subscribe {
+            display: none
+        }
+
+        @media (min-width: 900px) {
+            .banner-container .jobsinfo {
+                display: block;
+            }
+
+            .banner-container {
+                position: relative;
+                background: linear-gradient(to right, rgb(7, 111, 156) 0%, rgb(13, 242, 242) 100%);
+                height: 320px;
+                width: 100%;
+            }
+
+            .has-search .form-control {
+                padding-left: 2.375rem;
+            }
+
+            .has-search .form-control-feedback {
+                position: absolute;
+                z-index: 2;
+                display: block;
+                width: 2.375rem;
+                height: 2.375rem;
+                line-height: 2.375rem;
+                text-align: center;
+                pointer-events: none;
+                color: #aaa;
+            }
+
+            .banner-container .search_bar {
+                width: 650px;
+                margin-right: auto;
+                margin-left: auto;
+            }
+
+            .input-group.search_bar.home {
+                border: 6px solid #4a948f;
+                border-radius: 6px;
+            }
+
+            .banner-container .jobsinfo {
+                position: absolute;
+                top: 50px;
+                left: 0;
+                right: 0;
+                margin-left: auto;
+                margin-right: auto;
+                /* background: #77d7c1a8; */
+                background: linear-gradient(to right, rgb(7, 111, 156) 0%, rgb(13, 242, 242) 100%);
+                padding: 20px;
+                color: #fff;
+                font-weight: 500;
+                font-family: 'Roboto', sans-serif;
+                width: 850px;
+            }
+
+            .jobsinfo input::placeholder {
+                color: #d0cfce !important;
+                font-family: "Krub", Arial, sans-serif;
+            }
+
+            .jobsinfo p {
+                letter-spacing: 2px;
+                word-spacing: 5px;
+                text-align: center;
+            }
+
+            .banner-container .jobcount {
+                font-size: 30px;
+                font-family: 'Montserrat', sans-serif;
+            }
+        }
+
+        .home h1 {
+            padding-bottom: 20px
+        }
+
+        .icons {
+            padding-bottom: 40px;
+        }
+
+        .icons img {
+            width: 130px;
+        }
+
+        .icon-wrappper {
+            text-align: center;
+        }
+
+        .icon-wrappper h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #54595f
+        }
+
+        .icons .icon-wrappper:hover {
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+
+        .icon-wrappper a {
+            font-weight: 500
+        }
+
+        .icon-wrappper a:hover {
+            text-decoration: none;
+        }
+
+        @media (max-width: 575px) {
+            .home p {
+                line-height: inherit;
+                padding: 0 15px
+            }
+
+            .icon-wrappper h2 {
+                font-size: 12px;
+            }
+
+            .icon-wrappper {
+                padding-bottom: 20px;
+            }
+
+            .icons .icon-wrappper:hover {
+                transform: scale(1.2)
+            }
+        }
+    </style>
+</head>
+
+
+<!-- NAVBAR + LITTLE CSS..NOT MUCH -->
+<body aria-hidden="false" style="padding: 0px; overflow-x:hidden"> <noscript><iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-TMHX5CP" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript> 
+    <div id="resctl" class="resctl" style="display: none;"></div>
+    <nav class="navbar navbar-expand-lg navbar-dark" id="main-menu" style="background: #18a7b1;">
+        <div class="container"> <a class="navbar-brand" id="logo" href="//site domain"> <img
+                    src="//site logo" alt="Logo"
+                    class="img-fluid"> &nbsp;Everyjob </a> 
+            <button class="navbar-toggler" id="navbar-toggler"
+                type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav"
+                aria-expanded="false" aria-label="Toggle navigation"> <svg xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="22" height="22"
+                    preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20">
+                    <path fill="white" d="M20 5V2H0v3h20zm0 6V8H0v3h20zm0 6v-3H0v3h20z"></path>
+                </svg> 
+            </button>
+            
+            <div class="collapse navbar-collapse" id="main-nav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active"> <a class="nav-link" href="/">Home</a> </li>
+                    <li class="nav-item "> <a class="nav-link" href="/all_jobs">Latest Jobs</a> </li>
+                    <li class="nav-item "> <a class="nav-link" href="">Results</a> </li>
+                    <li class="nav-item "> <a class="nav-link" href="">Admit Card</a> </li>
+                    <li class="nav-item "> <a class="nav-link" href="/login">Log In/Sign Up</a> </li>
+                </ul>
+            </div>
+            <button class="navbar-toggler1" id="navbar-toggler1"
+                type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav"
+                aria-expanded="false" aria-label="Toggle navigation"> <svg xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="22" height="22"
+                    preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20">
+                    <path fill="white" d="M20 5V2H0v3h20zm0 6V8H0v3h20zm0 6v-3H0v3h20z"></path>
+                </svg> 
+            </button>
+
+        </div>
+    </nav>
+    <style type="text/css">
+        #mobile_search {
+            display: none;
+        }
+
+        #search_block {
+            background: #e8e8e8;
+            border-radius: 9px;
+        }
+
+        @media only screen and (max-width: 768px) {
+            #mobile_search {
+                display: block;
+            }
+        }
+    </style>
+    <style type="text/css">
+        #latest_job_search {
+            display: none;
+        }
+
+        .qualifications-section {
+            background-color: #f9f9f9
+        }
+
+        .qualifications-section a {
+            color: #198276
+        }
+
+        @media only screen and (max-width: 768px) {
+            #latest_job_search {
+                display: block;
+            }
+        }
+    </style>
+
+    <!-- BANNER FOR SEARCH PURPOSE(UNIVERSAL SEARCH) -->
+    <div class="white home">
+        <div class="banner-container">
+            <div class="jobsinfo text-center">
+                <div style="font-size: 26px;font-weight: bold;" class="pb-2 mb-2">All Government
+                    Jobs Updates</div>
+                    <!-- https://site/browse -->
+                <form method="GET" action="//browse site">
+                    <div class="input-group search_bar pb-3 pt-3"> <input type="text" class="form-control rounded-0"
+                            id="search_query" name="q" value=""
+                            placeholder="Search Jobs, Admit Cards, Results ...." required="">
+                        <div class="input-group-append"> <button class="btn btn-sm btn-primary m-0" type="submit"> <span
+                                    class="fa fa-search"></span> search </button> </div>
+                    </div>
+                </form>
+                <div class="jobcount">.. Notifications and .. Jobs</div>
+            </div>
+        </div>
+        <div class="banner-container" id="latest_job_search"
+            style="background: linear-gradient(to right, rgb(7, 111, 156) 0%, rgb(13, 242, 242) 100%);">
+            <div class="text-center container pt-5 pb-5">
+                <div class="row">
+                    <div class="col-md-8 offset-md-2">
+                        <!-- https://site/browse -->
+                        <form method="post" action="/all_jobs">
+                            <div class="input-group search_bar home mb-3 mt-3"> <input type="text"
+                                    class="form-control rounded-0" name="q" value=""
+                                    placeholder="Search Jobs, syllabus, Admit Cards, Results ....">
+                                <div class="input-group-append"> <button aria-label="Search Jobs"
+                                        class="btn btn-sm btn-primary m-0" type="submit"> <span
+                                            class="fa fa-search"></span> </button> </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center pt-5 pb-4 ">
+            <h1>Everyjob- Best Govt Job Site</h1>
+            <h2 class="mb-4 font-weight-bold">Get Your Latest Government Jobs</h2>
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <p>Explore the world of Everyjob, which offer a wide range of career options.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- JOBS BY PERTICULAR FIELDS -->
+        <div class="icons">
+            <div class="container pb-5">
+                <div class="row pt-md-5">
+                    {% for job in job_name %}
+                        <div class="col-md-2 icon-wrappper col-6"><a href="/{{job}}"><img
+                                    alt="{{ job }}" src=""
+                                    class="img-fluid">
+                                <h3>{{ job }}</h3>
+                            </a>
+                        </div>
+                    {% endfor %}
+                    </div>
+                </div>
+                <div class="text-center"><a href="/all_jobs" class="btn btn-primary btn-lg">View More..</a>
+            </div>
+            
+        </div>
+        <!-- SOME JOB POSTINGS SHOW UP , PAGINATION ON THE LATER PAGE FOR ALL JOBS -->
+        <div class="container mb-5">
+            <h2 class="text-center font-weight-bold">All Govt Jobs</h2>
+            <div class="row mt-4">
+                <div class="col-md-10 offset-md-1">
+                    <div class="row mb-3">
+                        {% for i in details %}
+                        {% if loop.index > 1 and loop.index < 20 %}
+                        <div class="col-md-6 mb-4 d-flex"><span class="mr-3"><i
+                                    class="fa fa-angle-double-right text-danger" aria-hidden="true"></i></span><a
+                                target="_blank"
+                                href="/jobs/{{i.counter_id}}">{{i.genre}} {{i.post_name}}</a></div>
+                        {% endif %}
+                        {% endfor %}
+                    <div class="text-center ", style="display:block; margin:auto "><a href="" class="btn btn-primary btn-lg">View More
+                            Jobs</a></div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- BY QUALIFICATION...HAVEN'T THOUGHT THROUGH IT BUT STILL -->
+        <div class="qualifications-section">
+            <div class="container pt-4">
+                <h2 class="text-center font-weight-bold mb-4">All Government Jobs by Qualifications</h2>
+                <div class="row mt-4 jobsbyqua">
+                    {% for i in details %}
+                    {% if loop.index >1 and loop.index<20 %}
+                    <div class="col-md-4">
+                        <div class="mb-3 p-3 white text-center"><a
+                                href="/qualification/{{ i.qualification }}"><strong>{{ i.qualification }}</strong></a>
+                            <div class="pt-2">
+                                <!-- <span class="badge badge-pill badge-primary"> Notification</span> --><!-- <span class="badge badge-pill badge-default"> Jobs</span> -->
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- STATEWISE JOB POSTINGS SHOW UP -->
+        <div class="icons">
+            <div class="container pb-5">
+                <h2 class="text-center font-weight-bold mb-4 pt-4">All Govt jobs by Locations</h2>
+                <div class="row pt-md-2">
+                    <div class="col-md-2 icon-wrappper col-6 mb-3"><a
+                            href=""><img
+                                alt="Andaman and Nicobar Islands jobs"
+                                src=""
+                                class="img-fluid">
+                            <h3>Andaman and Nicobar Islands</h3>
+                        </a></div>
+                    <div class="col-md-2 icon-wrappper col-6 mb-3"><a
+                            href=""><img alt="Andhra Pradesh jobs"
+                                src=""
+                                class="img-fluid">
+                            <h3>Andhra Pradesh</h3>
+                        </a></div>
+                    <div class="col-md-2 icon-wrappper col-6 mb-3"><a
+                            href=""><img
+                                alt="Arunachal Pradesh jobs"
+                                src=""
+                                class="img-fluid">
+                            <h3>Arunachal Pradesh</h3>
+                        </a></div>
+                    <div class="col-md-2 icon-wrappper col-6 mb-3"><a
+                            href=""><img alt="Assam jobs"
+                                src=""
+                                class="img-fluid">
+                            <h3>Assam</h3>
+                        </a></div>
+                    <div class="col-md-2 icon-wrappper col-6 mb-3"><a
+                            href=""><img alt="Bihar jobs"
+                                src=""
+                                class="img-fluid">
+                            <h3>Bihar</h3>
+                        </a></div>
+                    <div class="col-md-2 icon-wrappper col-6 mb-3"><a
+                            href=""><img alt="Chandigarh jobs"
+                                src=""
+                                class="img-fluid">
+                            <h3>Chandigarh</h3>
+                        </a></div>
+                    <div class="col-md-2 icon-wrappper col-6 mb-3"><a
+                            href=""><img alt="Chhattisgarh jobs"
+                                src=""
+                                class="img-fluid">
+                            <h3>Chhattisgarh</h3>
+                        </a></div>
+                    <div class="col-md-2 icon-wrappper col-6 mb-3"><a
+                            href=""><img
+                                alt="Dadra and Nagar Haveli jobs"
+                                src=""
+                                class="img-fluid">
+                            <h3>Dadra and Nagar Haveli</h3>
+                        </a></div>
+                    <div class="col-md-2 icon-wrappper col-6 mb-3"><a
+                            href=""><img alt="Daman and Diu jobs"
+                                src=""
+                                class="img-fluid">
+                            <h3>Daman and Diu</h3>
+                        </a></div>
+                    <div class="col-md-2 icon-wrappper col-6 mb-3"><a
+                            href=""><img alt="Delhi jobs"
+                                src=""
+                                class="img-fluid">
+                            <h3>Delhi</h3>
+                        </a></div>
+                    <div class="col-md-2 icon-wrappper col-6 mb-3"><a
+                            href=""><img alt="Goa jobs"
+                                src=""
+                                class="img-fluid">
+                            <h3>Goa</h3>
+                        </a></div>
+                    <div class="col-md-2 icon-wrappper col-6 mb-3"><a
+                            href=""><img alt="Gujarat jobs"
+                                src=""
+                                class="img-fluid">
+                            <h3>Gujarat</h3>
+                        </a></div>
+                    <div class="col-md-2 icon-wrappper col-6 mb-3"><a
+                            href=""><img alt="Haryana jobs"
+                                src=""
+                                class="img-fluid">
+                            <h3>Haryana</h3>
+                        </a></div>
+                    <div class="col-md-2 icon-wrappper col-6 mb-3"><a
+                            href=""><img
+                                alt="Himachal Pradesh jobs"
+                                src=""
+                                class="img-fluid">
+                            <h3>Himachal Pradesh</h3>
+                        </a></div>
+                    <div class="col-md-2 icon-wrappper col-6 mb-3"><a
+                            href=""><img
+                                alt="Jammu and Kashmir jobs"
+                                src=""
+                                class="img-fluid">
+                            <h3>Jammu and Kashmir</h3>
+                        </a></div>
+                    <div class="col-md-2 icon-wrappper col-6 mb-3"><a
+                            href=""><img alt="Jharkhand jobs"
+                                src=""
+                                class="img-fluid">
+                            <h3>Jharkhand</h3>
+                        </a></div>
+                    <div class="col-md-2 icon-wrappper col-6 mb-3"><a
+                            href=""><img alt="Karnataka jobs"
+                                src=""
+                                class="img-fluid">
+                            <h3>Karnataka</h3>
+                        </a></div>
+                    <div class="col-md-2 icon-wrappper col-6 mb-3"><a
+                            href=""><img alt="Kerala jobs"
+                                src=""
+                                class="img-fluid">
+                            <h3>Kerala</h3>
+                        </a></div>
+                    <div class="col-md-2 icon-wrappper col-6 mb-3"><a
+                            href=""><img alt="Lakshadweep jobs"
+                                src=""
+                                class="img-fluid">
+                            <h3>Lakshadweep</h3>
+                        </a></div>
+                    <div class="col-md-2 icon-wrappper col-6 mb-3"><a
+                            href=""><img alt="Madhya Pradesh jobs"
+                                src=""
+                                class="img-fluid">
+                            <h3>Madhya Pradesh</h3>
+                        </a></div>
+                    <div class="col-md-2 icon-wrappper col-6 mb-3"><a
+                            href=""><img alt="Maharashtra jobs"
+                                src=""
+                                class="img-fluid">
+                            <h3>Maharashtra</h3>
+                        </a></div>
+                    <div class="col-md-2 icon-wrappper col-6 mb-3"><a
+                            href=""><img alt="Manipur jobs"
+                                src=""
+                                class="img-fluid">
+                            <h3>Manipur</h3>
+                        </a></div>
+                    <div class="col-md-2 icon-wrappper col-6 mb-3"><a
+                            href=""><img alt="Meghalaya jobs"
+                                src=""
+                                class="img-fluid">
+                            <h3>Meghalaya</h3>
+                        </a></div>
+                    <div class="col-md-2 icon-wrappper col-6 mb-3"><a
+                            href=""><img alt="Mizoram jobs"
+                                src=""
+                                class="img-fluid">
+                            <h3>Mizoram</h3>
+                        </a></div>
+                
+                    <div class="col-md-2 icon-wrappper col-6 mb-3"><a
+                            href=""><img alt="Odisha jobs"
+                                src=""
+                                class="img-fluid">
+                            <h3>Odisha</h3>
+                        </a></div>
+                    <div class="col-md-2 icon-wrappper col-6 mb-3"><a
+                            href=""><img alt="Puducherry jobs"
+                                src=""
+                                class="img-fluid">
+                            <h3>Puducherry</h3>
+                        </a></div>
+                    <div class="col-md-2 icon-wrappper col-6 mb-3"><a
+                            href=""><img alt="Punjab jobs"
+                                src=""
+                                class="img-fluid">
+                            <h3>Punjab</h3>
+                        </a></div>
+                    <div class="col-md-2 icon-wrappper col-6 mb-3"><a
+                            href=""><img alt="Rajasthan jobs"
+                                src=""
+                                class="img-fluid">
+                            <h3>Rajasthan</h3>
+                        </a></div>
+                    <div class="col-md-2 icon-wrappper col-6 mb-3"><a
+                            href=""><img alt="Sikkim jobs"
+                                src=""
+                                class="img-fluid">
+                            <h3>Sikkim</h3>
+                        </a></div>
+                    <div class="col-md-2 icon-wrappper col-6 mb-3"><a
+                            href=""><img alt="Tamil Nadu jobs"
+                                src=""
+                                class="img-fluid">
+                            <h3>Tamil Nadu</h3>
+                        </a></div>
+                    <div class="col-md-2 icon-wrappper col-6 mb-3"><a
+                            href=""><img alt="Telangana jobs"
+                                src=""
+                                class="img-fluid">
+                            <h3>Telangana</h3>
+                        </a></div>
+                    <div class="col-md-2 icon-wrappper col-6 mb-3"><a
+                            href=""><img alt="Tripura jobs"
+                                src=""
+                                class="img-fluid">
+                            <h3>Tripura</h3>
+                        </a></div>
+                    <div class="col-md-2 icon-wrappper col-6 mb-3"><a
+                            href=""><img alt="Uttar Pradesh jobs"
+                                src=""
+                                class="img-fluid">
+                            <h3>Uttar Pradesh</h3>
+                        </a></div>
+                    <div class="col-md-2 icon-wrappper col-6 mb-3"><a
+                            href=""><img alt="Uttarakhand jobs"
+                                src=""
+                                class="img-fluid">
+                            <h3>Uttarakhand</h3>
+                        </a></div>
+                    <div class="col-md-2 icon-wrappper col-6 mb-3"><a
+                            href=""><img alt="West Bengal jobs"
+                                src=""
+                                class="img-fluid">
+                            <h3>West Bengal</h3>
+                        </a></div>
+                    <div class="col-md-2 icon-wrappper col-6 mb-3"><a
+                            href=""><img alt="Across India jobs"
+                                src=""
+                                class="img-fluid">
+                            <h3>Across India</h3>
+                        </a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<!-- SMALL FOOTER FOR SIMPLE LINKS -->
+    <script type="text/javascript">const sc = [];</script>
+    <style type="text/css">
+        .footer-links {
+            padding-top: 10px;
+            padding-bottom: 10px
+        }
+
+        .btn,
+        .btn-link,
+        .dropdown-item {
+            font-weight: 600
+        }
+    </style>
+    <footer class="page-footer font-small unique-color-dark">
+        <div class="footer-copyright p-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 footer-list">
+                        <div class="footer-links"> <a href="about-us">About Us</a> </div>
+                        <div class="footer-links"> <a href="">Privacy
+                                Policy</a> 
+                        </div>
+                        <div class="footer-links"> <a href="">Terms and
+                                Conditions</a> 
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-4 copyright-link">
+                        <div class="footer-links"> <a
+                                href=""
+                                title="DMCA.com Protection Status" class="dmca-badge"> <img
+                                    src=""
+                                    alt="DMCA.com Protection Status"></a>
+                            <script src=""> </script>
+                        </div> <a href="//site domain">EveryJob</a> © 2023
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- v=9.0 jquery js
+        v=9.0 bootstrap.min
+        v=9.0 popper_min -->
+
+    </footer>
+    <script type="text/javascript"> const csrf = "324b97069dcbecf6292f3305d9a6cb47" </script>
+    <script type="text/javascript" src="{{url_for('static',filename='public/js/jquery_min.js')}}"></script>  
+    <script type="text/javascript" src="{{url_for('static',filename='public/js/bootstrap.js')}}"></script> 
+    <script type="text/javascript" src="{{url_for('static',filename='public/js/popper_min.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename='assets/js/jquery.js')}}"></script>
+    <script type="text/javascript" id="" src="https://www.googletagmanager.com/gtag/js?id=UA-100873393-1"></script>
+    <script type="text/javascript" id="">window._izq = window._izq || []; window._izq.push(["init"]);</script>
+</html>
