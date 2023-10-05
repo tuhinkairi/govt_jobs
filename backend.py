@@ -77,8 +77,10 @@ def send_jobs():
     
 # sending detailed information of jobs
 def send_job_details():
+    # this returns a list of data
     file = govt_job_scraper.get_job(True)
-    for i in file['data']:
+    
+    for i in file:
         counter_id = i['id']
         data_chunk = i['data']
         overview = data_chunk['overview']
@@ -132,8 +134,8 @@ def push_to_db():
     send_admit()
     db.session.execute(text('DELETE FROM result_info'))
     send_result()
-    send_job_details()
     db.session.execute(text('DELETE FROM job_details'))
+    send_job_details()
     return 'data push done'
 
 ''' ******** end *********'''    
@@ -155,15 +157,27 @@ def home():
 
 @app.route('/all_jobs', methods=['GET','POST'])
 def all_jobs():
-    data = basic_info.query.all()
+    data = basic_info.query.all()[1:]
+    valid = lambda x: x-1 if x-1 >=0 else 0 
+    number = len(data)
     if request.method =='POST':
         job_name = request.form.get('job_name')
-        print(job_name)
         data = basic_info.query.filter(basic_info.title.contains(job_name) | basic_info.genre.contains(job_name) | basic_info.post_name.contains(job_name)).all()
-        return render_template('commonpage.html',data = data)
-    return render_template('commonpage.html',data = data)
+        number = len(data)
+    return render_template('commonpage.html',data = data, total = valid(number))
 
+@app.route('/job_details/<u_id>')
+def details(u_id):
+    data = job_details.query.filter_by(counter_id = u_id).first()
+    
+    print(type(u_id),type(data))
+    
+    return render_template('job_details.html',data = data)
 
+@app.route('/updatedb')
+def update():
+    push_to_db()
+    return 'update is done'
 
 @app.route('/login')
 def login():

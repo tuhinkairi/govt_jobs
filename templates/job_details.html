@@ -497,13 +497,73 @@
                         }
                     </style>
                 </div>
-                <div class="col-md-6">
-                    <div class="text-right mb-3 mt-2">Sort by : <select id="sort_relevance">
-                            <option value="newest" selected="">Newest</option>
-                            <option value="expiring-soon">Expiring Soon</option>
-                        </select></div>
-                </div>
             </div>
+
+            <!-- data display -->
+            <table class="table table-bordered table-striped today-posts">
+                <thead>
+                    <tr>
+                        {% for i in data.overview %}
+                        <th class="text-center fr">{{ i.heading }}</th>
+                        {% endfor %}                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        {% for i in data.overview %}
+
+                        <td>
+                            {{i.info}}
+                        </td>
+                        {% endfor %}
+                        
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-bordered table-striped today-posts">
+                <thead>
+                    <tr>
+
+                        {% for i in data.basic_details %}
+                        <th class="text-center fr">{{ i.heading }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        {% for i in data.basic_details %}
+
+                        <td>
+                            {{ i.info }}
+                        </td>
+                        {% endfor %}
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- paragraph -->
+            <div>
+                
+            </div>
+<p>{{ data.date[0] }}</p>
+            <table class="table table-bordered table-striped today-posts">
+                <thead>
+                    <tr>
+                        {% for i in data.date[1] %}
+                        <th class="text-center fr">{{ i.heading }}</th>
+                       
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in data.date[1] %}
+
+                    <td>
+                        {{ i.info }}
+                    </td>
+                    {% endfor %}
+                </tbody>
+            </table>
             <table class="table table-bordered table-striped today-posts">
                 <thead>
                     <tr>
@@ -517,257 +577,121 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for i in data %}
                     <tr>
                         <td>
-                            <div>{{ i.title }}</div>
+                            <div></div>
                         </td>
-                        <td>{{ i.genre }}</td>
-                        <td>{{ i.posts }}</td>
-                        <td>{{ i.post_name }}</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                         <td>
-                            <div><a class="text-primary" href="b-e-b-tech-jobs">{{ i.qualification }}</a></div>
+                            <div><a class="text-primary" href="b-e-b-tech-jobs"></a></div>
                         </td>
                         <td>
-                            <div>{{ i.date }}</div>
+                            <div></div>
                         </td>
-                        {% if 'govtjobguru.in' in i.link %}
-                        <td><a class="btn btn-sm m-0 btn-outline-primary waves-effect pl-3 pr-3" style="display:block; width:fit; margin:auto"
-                                href="/job_details/{{ i.title }}{{ i.genre }}{{i.post_name}}">Get Details</a></td>
-                        {% else %}
-                        <td><a class="btn btn-sm m-0 btn-outline-primary waves-effect pl-3 pr-3" style="display:block; width:fit; margin:auto"
-                                href="{{ i.link }}">Get Details</a></td>
-                        {% endif %}
                     </tr>
-                    {% endfor %}
                 </tbody>
             </table>
-            <div class="text-center  padding1"><a href="" class="btn btn-primary btn-lg">View More..</a>
-                <style>
-                    .padding1 {
-                        padding-top: 15px;
-                        padding-bottom: 20px;
-                    }
-                </style>
-            </div>
-            <h2 class="text-center font-weight-bold mb-4">Government Jobs By Location</h2><br>
-            <div class="icons">
-                <div class="container pb-5">
-                    <div class="row pt-md-2">
-                        <div class="col-md-2 icon-wrappper col-6 mb-3"><a href=""><img
-                                    alt="Andaman and Nicobar Islands jobs" src="" class="img-fluid">
-                                <h3>Andaman and Nicobar Islands</h3>
-                            </a></div>
-                        <div class="col-md-2 icon-wrappper col-6 mb-3"><a href=""><img alt="Andhra Pradesh jobs" src=""
-                                    class="img-fluid">
-                                <h3>Andhra Pradesh</h3>
-                            </a></div>
-                        <div class="col-md-2 icon-wrappper col-6 mb-3"><a href=""><img alt="Arunachal Pradesh jobs"
-                                    src="" class="img-fluid">
-                                <h3>Arunachal Pradesh</h3>
-                            </a></div>
-                        <div class="col-md-2 icon-wrappper col-6 mb-3"><a href=""><img alt="Assam jobs" src=""
-                                    class="img-fluid">
-                                <h3>Assam</h3>
-                            </a></div>
-                        <div class="col-md-2 icon-wrappper col-6 mb-3"><a href=""><img alt="Bihar jobs" src=""
-                                    class="img-fluid">
-                                <h3>Bihar</h3>
-                            </a></div>
-                        <div class="col-md-2 icon-wrappper col-6 mb-3"><a href=""><img alt="Chandigarh jobs" src=""
-                                    class="img-fluid">
-                                <h3>Chandigarh</h3>
-                            </a></div>
-                        <div class="col-md-2 icon-wrappper col-6 mb-3"><a href=""><img alt="Chhattisgarh jobs" src=""
-                                    class="img-fluid">
-                                <h3>Chhattisgarh</h3>
-                            </a></div>
-                        <div class="col-md-2 icon-wrappper col-6 mb-3"><a href=""><img alt="Dadra and Nagar Haveli jobs"
-                                    src="" class="img-fluid">
-                                <h3>Dadra and Nagar Haveli</h3>
-                            </a></div>
-                        <div class="col-md-2 icon-wrappper col-6 mb-3"><a href=""><img alt="Daman and Diu jobs" src=""
-                                    class="img-fluid">
-                                <h3>Daman and Diu</h3>
-                            </a></div>
-                        <div class="col-md-2 icon-wrappper col-6 mb-3"><a href=""><img alt="Delhi jobs" src=""
-                                    class="img-fluid">
-                                <h3>Delhi</h3>
-                            </a></div>
-                        <div class="col-md-2 icon-wrappper col-6 mb-3"><a href=""><img alt="Goa jobs" src=""
-                                    class="img-fluid">
-                                <h3>Goa</h3>
-                            </a></div>
-                        <div class="col-md-2 icon-wrappper col-6 mb-3"><a href=""><img alt="Gujarat jobs" src=""
-                                    class="img-fluid">
-                                <h3>Gujarat</h3>
-                            </a></div>
-                        <div class="col-md-2 icon-wrappper col-6 mb-3"><a href=""><img alt="Haryana jobs" src=""
-                                    class="img-fluid">
-                                <h3>Haryana</h3>
-                            </a></div>
-                        <div class="col-md-2 icon-wrappper col-6 mb-3"><a href=""><img alt="Himachal Pradesh jobs"
-                                    src="" class="img-fluid">
-                                <h3>Himachal Pradesh</h3>
-                            </a></div>
-                        <div class="col-md-2 icon-wrappper col-6 mb-3"><a href=""><img alt="Jammu and Kashmir jobs"
-                                    src="" class="img-fluid">
-                                <h3>Jammu and Kashmir</h3>
-                            </a></div>
-                        <div class="col-md-2 icon-wrappper col-6 mb-3"><a href=""><img alt="Jharkhand jobs" src=""
-                                    class="img-fluid">
-                                <h3>Jharkhand</h3>
-                            </a></div>
-                        <div class="col-md-2 icon-wrappper col-6 mb-3"><a href=""><img alt="Karnataka jobs" src=""
-                                    class="img-fluid">
-                                <h3>Karnataka</h3>
-                            </a></div>
-                        <div class="col-md-2 icon-wrappper col-6 mb-3"><a href=""><img alt="Kerala jobs" src=""
-                                    class="img-fluid">
-                                <h3>Kerala</h3>
-                            </a></div>
-                        <div class="col-md-2 icon-wrappper col-6 mb-3"><a href=""><img alt="Lakshadweep jobs" src=""
-                                    class="img-fluid">
-                                <h3>Lakshadweep</h3>
-                            </a></div>
-                        <div class="col-md-2 icon-wrappper col-6 mb-3"><a href=""><img alt="Madhya Pradesh jobs" src=""
-                                    class="img-fluid">
-                                <h3>Madhya Pradesh</h3>
-                            </a></div>
-                        <div class="col-md-2 icon-wrappper col-6 mb-3"><a href=""><img alt="Maharashtra jobs" src=""
-                                    class="img-fluid">
-                                <h3>Maharashtra</h3>
-                            </a></div>
-                        <div class="col-md-2 icon-wrappper col-6 mb-3"><a href=""><img alt="Manipur jobs" src=""
-                                    class="img-fluid">
-                                <h3>Manipur</h3>
-                            </a></div>
-                        <div class="col-md-2 icon-wrappper col-6 mb-3"><a href=""><img alt="Meghalaya jobs" src=""
-                                    class="img-fluid">
-                                <h3>Meghalaya</h3>
-                            </a></div>
-                        <div class="col-md-2 icon-wrappper col-6 mb-3"><a href=""><img alt="Mizoram jobs" src=""
-                                    class="img-fluid">
-                                <h3>Mizoram</h3>
-                            </a></div>
-
-                        <div class="col-md-2 icon-wrappper col-6 mb-3"><a href=""><img alt="Odisha jobs" src=""
-                                    class="img-fluid">
-                                <h3>Odisha</h3>
-                            </a></div>
-                        <div class="col-md-2 icon-wrappper col-6 mb-3"><a href=""><img alt="Puducherry jobs" src=""
-                                    class="img-fluid">
-                                <h3>Puducherry</h3>
-                            </a></div>
-                        <div class="col-md-2 icon-wrappper col-6 mb-3"><a href=""><img alt="Punjab jobs" src=""
-                                    class="img-fluid">
-                                <h3>Punjab</h3>
-                            </a></div>
-                        <div class="col-md-2 icon-wrappper col-6 mb-3"><a href=""><img alt="Rajasthan jobs" src=""
-                                    class="img-fluid">
-                                <h3>Rajasthan</h3>
-                            </a></div>
-                        <div class="col-md-2 icon-wrappper col-6 mb-3"><a href=""><img alt="Sikkim jobs" src=""
-                                    class="img-fluid">
-                                <h3>Sikkim</h3>
-                            </a></div>
-                        <div class="col-md-2 icon-wrappper col-6 mb-3"><a href=""><img alt="Tamil Nadu jobs" src=""
-                                    class="img-fluid">
-                                <h3>Tamil Nadu</h3>
-                            </a></div>
-                        <div class="col-md-2 icon-wrappper col-6 mb-3"><a href=""><img alt="Telangana jobs" src=""
-                                    class="img-fluid">
-                                <h3>Telangana</h3>
-                            </a></div>
-                        <div class="col-md-2 icon-wrappper col-6 mb-3"><a href=""><img alt="Tripura jobs" src=""
-                                    class="img-fluid">
-                                <h3>Tripura</h3>
-                            </a></div>
-                        <div class="col-md-2 icon-wrappper col-6 mb-3"><a href=""><img alt="Uttar Pradesh jobs" src=""
-                                    class="img-fluid">
-                                <h3>Uttar Pradesh</h3>
-                            </a></div>
-                        <div class="col-md-2 icon-wrappper col-6 mb-3"><a href=""><img alt="Uttarakhand jobs" src=""
-                                    class="img-fluid">
-                                <h3>Uttarakhand</h3>
-                            </a></div>
-                        <div class="col-md-2 icon-wrappper col-6 mb-3"><a href=""><img alt="West Bengal jobs" src=""
-                                    class="img-fluid">
-                                <h3>West Bengal</h3>
-                            </a></div>
-                        <div class="col-md-2 icon-wrappper col-6 mb-3"><a href=""><img alt="Across India jobs" src=""
-                                    class="img-fluid">
-                                <h3>Across India</h3>
-                            </a></div>
+            <table class="table table-bordered table-striped today-posts">
+                <thead>
+                    <tr>
+                        <th class="text-center fr">Title</th>
+                        <th class="text-center fr">Genre</th>
+                        <th class="text-center fr">Post Number</th>
+                        <th class="text-center fr">Post Name</th>
+                        <th class="text-center fr">Education</th>
+                        <th class="text-center fr">Date</th>
+                        <th class="text-center fr">More Information</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div></div>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <div><a class="text-primary" href="b-e-b-tech-jobs"></a></div>
+                        </td>
+                        <td>
+                            <div></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-bordered table-striped today-posts">
+                <thead>
+                    <tr>
+                        <th class="text-center fr">Title</th>
+                        <th class="text-center fr">Genre</th>
+                        <th class="text-center fr">Post Number</th>
+                        <th class="text-center fr">Post Name</th>
+                        <th class="text-center fr">Education</th>
+                        <th class="text-center fr">Date</th>
+                        <th class="text-center fr">More Information</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div></div>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <div><a class="text-primary" href="b-e-b-tech-jobs"></a></div>
+                        </td>
+                        <td>
+                            <div></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        <!-- footer -->
+        <footer class="page-footer font-small unique-color-dark" style="">
+            <div class="footer-copyright p-3">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 footer-list">
+                            <div class="footer-links"> <a href="about-us">About Us</a> </div>
+                            <div class="footer-links"> <a href="">Privacy
+                                    Policy</a>
+                            </div>
+                            <div class="footer-links"> <a href="">Terms and
+                                    Conditions</a>
+                            </div>
+    
+                        </div>
+                        <div class="col-md-4 copyright-link">
+                            <div class="footer-links"> <a href="" title="DMCA.com Protection Status" class="dmca-badge">
+                                    <img src="" alt="DMCA.com Protection Status"></a>
+                                <script src=""> </script>
+                            </div> <a href="//site domain">EveryJob</a> © 2023
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <style type="text/css">
-        #download_android_app {
-            padding-top: 10px;
-            padding-bottom: 10px;
-            text-transform: capitalize;
-            position: fixed;
-            right: 15px;
-            bottom: 20px;
-            z-index: 9999;
-            font-size: 16px !important;
-        }
-
-        .footer-links {
-            padding-top: 10px;
-            padding-bottom: 10px
-        }
-
-        .btn,
-        .btn-link,
-        .dropdown-item {
-            font-weight: 600
-        }
-    </style>
-
-    <footer class="page-footer font-small unique-color-dark">
-        <div class="footer-copyright p-3">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 footer-list">
-                        <div class="footer-links"> <a href="about-us">About Us</a> </div>
-                        <div class="footer-links"> <a href="">Privacy
-                                Policy</a>
-                        </div>
-                        <div class="footer-links"> <a href="">Terms and
-                                Conditions</a>
-                        </div>
-
-                    </div>
-                    <div class="col-md-4 copyright-link">
-                        <div class="footer-links"> <a href="" title="DMCA.com Protection Status" class="dmca-badge">
-                                <img src="" alt="DMCA.com Protection Status"></a>
-                            <script src=""> </script>
-                        </div> <a href="//site domain">EveryJob</a> © 2023
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- v=9.0 jquery js
-    v=9.0 bootstrap.min
-    v=9.0 popper_min -->
-
-    </footer>
-    <script type="text/javascript"> const csrf = "7ca2dc8a5e0aaf2a631217b1a0856283" </script>
-    <script type="text/javascript" src="{{url_for('static',filename='public/js/jquery_min.js')}}"></script>
-    <script type="text/javascript" src="{{url_for('static',filename='public/js/bootstrap.js')}}"></script>
-    <script type="text/javascript" src="{{url_for('static',filename='public/js/popper_min.js')}}"></script>
-    <script src="{{url_for('static',filename='assets/js/jquery.js')}}"></script>
-    <ul id="ui-id-1" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" unselectable="on"
-        style="display: none;"></ul>
-    <div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div>
-    <ul id="ui-id-2" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" unselectable="on"
-        style="display: none;"></ul>
-    <div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div>
-
-
-</html>
+    
+            <!-- v=9.0 jquery js
+        v=9.0 bootstrap.min
+        v=9.0 popper_min -->
+    
+        </footer>
+        <script type="text/javascript"> const csrf = "7ca2dc8a5e0aaf2a631217b1a0856283" </script>
+        <script type="text/javascript" src="{{url_for('static',filename='public/js/jquery_min.js')}}"></script>
+        <script type="text/javascript" src="{{url_for('static',filename='public/js/bootstrap.js')}}"></script>
+        <script type="text/javascript" src="{{url_for('static',filename='public/js/popper_min.js')}}"></script>
+        <script src="{{url_for('static',filename='assets/js/jquery.js')}}"></script>
+        <ul id="ui-id-1" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" unselectable="on"
+            style="display: none;"></ul>
+        <div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div>
+        <ul id="ui-id-2" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" unselectable="on"
+            style="display: none;"></ul>
+        <div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div>
+    
+    
+    </html>
