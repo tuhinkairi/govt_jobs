@@ -543,7 +543,7 @@
 
             <!-- paragraph -->
             <div>
-                
+                {{ data.discription|safe }}
             </div>
 <p>{{ data.date[0] }}</p>
             <table class="table table-bordered table-striped today-posts">
@@ -564,61 +564,49 @@
                     {% endfor %}
                 </tbody>
             </table>
+            <!-- eligibility -->
             <table class="table table-bordered table-striped today-posts">
+                <div><p>{{data.eligibility[0]}}</p></div>
                 <thead>
                     <tr>
-                        <th class="text-center fr">Title</th>
-                        <th class="text-center fr">Genre</th>
-                        <th class="text-center fr">Post Number</th>
-                        <th class="text-center fr">Post Name</th>
-                        <th class="text-center fr">Education</th>
-                        <th class="text-center fr">Date</th>
-                        <th class="text-center fr">More Information</th>
+                        {% for i in data.eligibility[1][0].heading %}
+                        <th class="text-center fr">{{ i }}</th>
+                        {% endfor %}
                     </tr>
                 </thead>
                 <tbody>
+                    {% for i in data.eligibility[1] %}
+                    {% for row in i.info %}
                     <tr>
+                        {% for data in row%}
                         <td>
-                            <div></div>
+                            {{data}}
                         </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <div><a class="text-primary" href="b-e-b-tech-jobs"></a></div>
-                        </td>
-                        <td>
-                            <div></div>
-                        </td>
+                        {% endfor %}
                     </tr>
+                    {% endfor %}
+                    {% endfor %}
                 </tbody>
             </table>
+            <!-- payment -->
             <table class="table table-bordered table-striped today-posts">
+
+               <h4 style="color: #28a745;">Payment</h4>
+               <p>{{ data.payment[0] }}</p>
                 <thead>
                     <tr>
-                        <th class="text-center fr">Title</th>
-                        <th class="text-center fr">Genre</th>
-                        <th class="text-center fr">Post Number</th>
-                        <th class="text-center fr">Post Name</th>
-                        <th class="text-center fr">Education</th>
-                        <th class="text-center fr">Date</th>
-                        <th class="text-center fr">More Information</th>
+                        {% for i in payment[1] %}
+                        <th class="text-center fr">{{i.heading}}</th>
+                        {% endfor %}
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
+                        {% for i in payment[1] %}
                         <td>
-                            <div></div>
+                            {{ i.info }}
                         </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <div><a class="text-primary" href="b-e-b-tech-jobs"></a></div>
-                        </td>
-                        <td>
-                            <div></div>
-                        </td>
+                        {% endfor %}
                     </tr>
                 </tbody>
             </table>

@@ -51,34 +51,14 @@ class job_details(db.Model):
      
 """ ******** supporting functions for datasending oparations ********  """
 
-""" sending page_1 """ 
+""" sending page_1 """
 
-def send_jobs():
-
-    file_data = govt_job_scraper.get_job(False)
-    data = file_data['data']
-    print('pushing basic info for jobs')
-    for i in data:
-        title = i['title']
-        for itr, info  in enumerate(i['col_id']):
-            counter_id = info
-            genre = i['col1'][itr]
-            post_number = i['col2'][itr]
-            post_name = i['col3'][itr]
-            qualificaiton = i['col4'][itr]
-            date = i['col5'][itr]
-            link = i['col6'][itr]      
-            
-            entry = basic_info( title = title ,genre = genre , posts = post_number, post_name = post_name, qualification = qualificaiton, date = date, link = link, counter_id = counter_id)
-            db.session.execute(text('SET @num :=0; UPDATE basic_info SET sno = @num:= @num+1; ALTER TABLE basic_info AUTO_INCREMENT =1;'))
-            db.session.add(entry)
-            db.session.commit()
-    print('Updated !')
-    
 # sending detailed information of jobs
-def send_job_details():
+ 
+def send_job_details(job_data):
+    ''' this function is a part of pushing data for the details of data'''
     # this returns a list of data
-    file = govt_job_scraper.get_job(True)
+    file = job_data
     
     for i in file:
         counter_id = i['id']
@@ -97,10 +77,38 @@ def send_job_details():
         db.session.add(entry)
         db.session.commit()
         print('done')
+
+# sending basic details and detailed details of jobs to database
+def send_jobs():
+
+    basic_data,detailed_data = govt_job_scraper.get_job()
+    data = basic_data['data']
+    print('pushing basic info for jobs')
+    for i in data:
+        title = i['title']
+        for itr, info  in enumerate(i['col_id']):
+            counter_id = info
+            genre = i['col1'][itr]
+            post_number = i['col2'][itr]
+            post_name = i['col3'][itr]
+            qualificaiton = i['col4'][itr]
+            date = i['col5'][itr]
+            link = i['col6'][itr]      
+            
+            entry = basic_info( title = title ,genre = genre , posts = post_number, post_name = post_name, qualification = qualificaiton, date = date, link = link, counter_id = counter_id)
+            db.session.execute(text('SET @num :=0; UPDATE basic_info SET sno = @num:= @num+1; ALTER TABLE basic_info AUTO_INCREMENT =1;'))
+            db.session.add(entry)
+            db.session.commit()
+            
+    print('Updated basic!')
+    db.session.execute(text('DELETE FROM job_details'))
+    send_job_details(detailed_data)
+    print('Updated full details!')
+    
+        
 # send admits data to the db
 def send_admit():
 
-    
     details =  govt_job_scraper.get_admit() 
     for i in details:
         id = i['id']
@@ -134,8 +142,6 @@ def push_to_db():
     send_admit()
     db.session.execute(text('DELETE FROM result_info'))
     send_result()
-    db.session.execute(text('DELETE FROM job_details'))
-    send_job_details()
     return 'data push done'
 
 ''' ******** end *********'''    
@@ -174,7 +180,7 @@ def details(u_id):
     
     return render_template('job_details.html',data = data)
 
-@app.route('/updatedb')
+@app.route('/update_db')
 def update():
     push_to_db()
     return 'update is done'

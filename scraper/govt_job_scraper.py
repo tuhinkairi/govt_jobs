@@ -21,14 +21,11 @@ def get_main_link():
   return [i[0] for i in links]
 
 
-def get_job(detailed = False):
+def get_job():
   data,title = page1(get_main_link()[0])
   basic = {'page_title':title,'data':data} 
-  if not detailed: 
-    return basic
-  else:
-    # return list
-    return job_details(basic)
+  # return both data for id sync
+  return basic,job_details(basic)
 
 # get full details for admits
 def get_admit():
