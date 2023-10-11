@@ -168,9 +168,25 @@ def all_jobs():
     number = len(data)
     if request.method =='POST':
         job_name = request.form.get('job_name')
-        data = basic_info.query.filter(basic_info.title.contains(job_name) | basic_info.genre.contains(job_name) | basic_info.post_name.contains(job_name)).all()
-        number = len(data)
-    return render_template('commonpage.html',data = data, total = valid(number))
+
+        # job results
+        try:
+            data = basic_info.query.filter(basic_info.title.contains(job_name) | basic_info.genre.contains(job_name) | basic_info.post_name.contains(job_name)).all()
+        except:
+            data = []
+
+        try:
+            admit = admit_info.query.filter(admit_info.title.contains(job_name)).all()
+        except:
+            admit = []
+
+        try:
+            result = result_info.query.filter(result_info.title.contains(job_name)).all()
+        except:
+            result = []
+            
+        number = len(data)+len(result) + len(admit)
+    return render_template('commonpage.html',data = data, admit = admit,result = result, total = valid(number))
 
 @app.route('/job_details/<u_id>')
 def details(u_id):
@@ -190,4 +206,4 @@ def login():
     return render_template('login.html')
 
 if __name__ == '__main__':
-    app.run(debug = True)
+    app.run(host="0.0.0.0",port =5000,debug = True)

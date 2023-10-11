@@ -86,7 +86,7 @@
                         Sign up
                     </button>
                 </div>
-                <img src="../client/assets/register.svg" class="image" alt="" />
+                <img src="{{ url_for('static',filename='assets/register.svg')}}" class="image" alt="" />
             </div>
             <div class="panel right-panel">
                 <div class="content">
@@ -99,12 +99,12 @@
                         Sign in
                     </button>
                 </div>
-                <img src="../client/assets/log.svg" class="image" alt="" />
+                <img src="{{ url_for('static',filename='assets/log.svg') }}" class="image" alt="" />
             </div>
         </div>
     </div>
 
-    <script src="../client/assets/js/login.js"></script>
+    <script src="{{ url_for('static',filename='assets/js/login.js') }}"></script>
 </body>
 
 </html>

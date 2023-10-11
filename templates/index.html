@@ -306,10 +306,8 @@
             <div class="container pb-5">
                 <div class="row pt-md-5">
                     {% for job in job_name %}
-                        <div class="col-md-2 icon-wrappper col-6"><a href="/{{job}}"><img
-                                    alt="{{ job }}" src=""
-                                    class="img-fluid">
-                                <h3>{{ job }}</h3>
+                        <div class="col-md-2 icon-wrappper col-6"><a style="font:bold; color:#18a7b1; margin:2px " href="/{{job}}">
+                                {{ job }}
                             </a>
                         </div>
                     {% endfor %}
@@ -344,7 +342,7 @@
                         {% endif %}        
                         {% endif %}
                         {% endfor %}
-                    <div class="text-center ", style="display:block; margin:auto "><a href="" class="btn btn-primary btn-lg">View More
+                    <div class="text-center ", style="display:block; margin:auto "><a href="/all_jobs" class="btn btn-primary btn-lg">View More
                             Jobs</a></div>
                 </div>
             </div>

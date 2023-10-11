@@ -168,7 +168,7 @@
 
 </head>
 
-<body style="padding: 0px;"> <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TMHX5CP" height="0"
+<body style="padding: 0px; overflow-x: hidden; max-width:100vw"> <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TMHX5CP" height="0"
             width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div id="resctl" class="resctl" style="display: none;"></div>
     <style type="text/css">
@@ -246,6 +246,8 @@
                         <li class="nav-item "> <a class="nav-link" href="/all_jobs">Latest Jobs</a> </li>
                         <li class="nav-item "> <a class="nav-link" href="/results">Results</a> </li>
                         <li class="nav-item "> <a class="nav-link" href="/admit">Admit Card</a> </li>
+                        <li class="nav-item "> <a class="nav-link" href="/login">Log In/Sign Up</a> </li>
+
 
                     </ul>
                 </div>
@@ -469,6 +471,7 @@
                     padding-top: 15px;
                 }
             </style>
+            <!-- results showing -->
             <div class="row">
                 <div class="col-md-6 padding-2">
                     <p>{{ total }}</p>
@@ -504,7 +507,7 @@
                         </select></div>
                 </div>
             </div>
-            <table class="table table-bordered table-striped today-posts">
+            <table class="table table-bordered table-striped today-posts" style="">
                 <thead>
                     <tr>
                         <th class="text-center fr">Title</th>
@@ -526,7 +529,7 @@
                         <td>{{ i.posts }}</td>
                         <td>{{ i.post_name }}</td>
                         <td>
-                            <div><a class="text-primary" href="b-e-b-tech-jobs">{{ i.qualification }}</a></div>
+                            <div class="text-primary" >{{ i.qualification }}</div>
                         </td>
                         <td>
                             <div>{{ i.date }}</div>
@@ -550,6 +553,55 @@
                     }
                 </style>
             </div>
+
+            <!-- for admit -->
+            {% if admit|length != 0 %}
+            <h1 style="font:bold; text-transform:capitalize;">job admit</h1>
+
+            <table class="table table-bordered table-striped today-posts">
+                <thead>
+                    <tr>
+                        <th class="text-center fr">Title</th>
+                        <th class="text-center fr">link</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in admit %}
+                        <tr>
+
+                            <td>{{ i.title }}</td>
+                        <td><a class="btn btn-sm m-0 btn-outline-primary waves-effect pl-3 pr-3" style="display:block; width:fit; margin:auto"
+                            href="admit/{{ i.counter_id }}">Get Details</a></td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>    
+            </table>
+            {% else %}
+            {% endif %}                    
+
+            <!-- for result -->
+            {% if result|length != 0 %}
+            <h1 style="font:bold; text-transform:capitalize;">job Result</h1>
+            <table class="table table-bordered table-striped today-posts">
+                <thead>
+                    <tr>
+                        <th class="text-center fr">Title</th>
+                        <th class="text-center fr">link</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in result %}
+                        <tr>
+
+                            <td>{{ i.title }}</td>
+                        <td><a class="btn btn-sm m-0 btn-outline-primary waves-effect pl-3 pr-3" style="display:block; width:fit; margin:auto"
+                            href="admit/{{ i.counter_id }}">Get Details</a></td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>    
+            </table>
+            {% else %}
+            {% endif %}                    
             <h2 class="text-center font-weight-bold mb-4">Government Jobs By Location</h2><br>
             <div class="icons">
                 <div class="container pb-5">

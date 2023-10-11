@@ -246,6 +246,8 @@
                         <li class="nav-item "> <a class="nav-link" href="/all_jobs">Latest Jobs</a> </li>
                         <li class="nav-item "> <a class="nav-link" href="/results">Results</a> </li>
                         <li class="nav-item "> <a class="nav-link" href="/admit">Admit Card</a> </li>
+                    <li class="nav-item "> <a class="nav-link" href="/login">Log In/Sign Up</a> </li>
+
 
                     </ul>
                 </div>
@@ -459,6 +461,9 @@
                     .icons .icon-wrappper:hover {
                         transform: scale(1.2)
                     }
+                    table{
+                        text-align: center;
+                    }
                 }
             </style>
 
@@ -595,14 +600,14 @@
                <p>{{ data.payment[0] }}</p>
                 <thead>
                     <tr>
-                        {% for i in payment[1] %}
+                        {% for i in data.payment[1] %}
                         <th class="text-center fr">{{i.heading}}</th>
                         {% endfor %}
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        {% for i in payment[1] %}
+                        {% for i in data.payment[1] %}
                         <td>
                             {{ i.info }}
                         </td>
@@ -612,30 +617,22 @@
             </table>
             <table class="table table-bordered table-striped today-posts">
                 <thead>
+                    <div>{{ data.links[0] }}</div>
                     <tr>
-                        <th class="text-center fr">Title</th>
-                        <th class="text-center fr">Genre</th>
-                        <th class="text-center fr">Post Number</th>
-                        <th class="text-center fr">Post Name</th>
-                        <th class="text-center fr">Education</th>
-                        <th class="text-center fr">Date</th>
-                        <th class="text-center fr">More Information</th>
+                        {% for i in data.links[1][1:] %}
+                        <th class="text-center fr">{{ i.heading }}</th>
+                        {% endfor %}
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
+                        {% for i in data.links[1][1:] %}
                         <td>
-                            <div></div>
+
+                            <a href="{{ i.info }}" target="_blank" rel="noopener noreferrer">Go</a>
                         </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <div><a class="text-primary" href="b-e-b-tech-jobs"></a></div>
-                        </td>
-                        <td>
-                            <div></div>
-                        </td>
+                        {% endfor %}
+                        
                     </tr>
                 </tbody>
             </table>
